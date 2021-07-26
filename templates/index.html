@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
-    <h1>Todo List</h1>
-    <div>Add a new todo item: 
+    <h1 class="title">Todo List</h1>
+    <div class="start">Add a new todo item: 
         <form action="{{ url_for('add') }}" method="POST">
             <input type="text" name="todoitem">
             <input type="submit" value="Add Item">
         </form>
     </div>
-    <div>
+
+    <div class="parent">
+
+        
+        <div class="child incomplete">
         <h2>Incomplete Items</h2>
         <ul>
             {% for todo in incomplete %}
             <li style="font-size: 30pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}">Mark As Complete</a></li>
             {% endfor %}    
         </ul>
+        </div>
+
+        
+        <div class="child complete">
         <h2>Completed Items</h2>
         <ul>
             <form action="./delete" method="POST">
@@ -31,6 +41,9 @@
             </form>
 
         </ul>
+    </div>
+    
+        
     </div>
 </body>
 </html>
