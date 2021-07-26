@@ -9,8 +9,9 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200))
     complete = db.Column(db.Boolean)
-    
 
+    
+#routes
 @app.route('/')
 def index():
     incomplete = Todo.query.filter_by(complete=False).all()
