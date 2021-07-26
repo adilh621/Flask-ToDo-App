@@ -21,9 +21,15 @@
         </ul>
         <h2>Completed Items</h2>
         <ul>
-            {% for todo in complete %}
-            <li style="font-size: 30pt">{{ todo.text }}</li>
-            {% endfor %}
+            <form action="./delete" method="POST">
+                
+                
+
+                {% for todo in complete %}
+                <li style="font-size: 30pt">{{ todo.text }}<a href="{{ url_for('delete', id=todo.id) }}">remove</a></li>
+                {% endfor %}
+            </form>
+
         </ul>
     </div>
 </body>
