@@ -22,7 +22,7 @@
         <h2>Incomplete Items</h2>
         <ul>
             {% for todo in incomplete %}
-            <li style="font-size: 30pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}">Mark As Complete</a></li>
+            <li style="font-size: 30pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}">✅</a></li>
             {% endfor %}    
         </ul>
         </div>
@@ -36,7 +36,7 @@
                 
 
                 {% for todo in complete %}
-                <li style="font-size: 30pt">{{ todo.text }}<a href="{{ url_for('delete', id=todo.id) }}">remove</a></li>
+                <li style="font-size: 30pt">{{ todo.text }}<a href="{{ url_for('delete', id=todo.id) }}">❌</a></li>
                 {% endfor %}
             </form>
 
