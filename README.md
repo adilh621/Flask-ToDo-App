@@ -36,9 +36,9 @@ N/A
 ```
 
 ## Code Structure
-```
+
 The entry point to this application lies in the app.py file. This is where an instance of Flask is created and is implemented with the use of routes. The schema for the DB can also be found here as well.
-```
+
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at adilh621@gmail.com. You can find more of my work on [GitHub](https://github.com/adilh621).
 ## License
