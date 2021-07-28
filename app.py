@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import datetime
-from sqlalchemy import DateTime
+from sqlalchemy import DateTime, func
 from datetime import date
 
 app = Flask(__name__)
@@ -15,6 +15,7 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(200))
     complete = db.Column(db.Boolean)
+    
     
     
     
